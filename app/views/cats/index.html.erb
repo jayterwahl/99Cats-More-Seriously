@@ -1,0 +1,18 @@
+
+<big><big><big> <big><big><big><marquee behavior="scroll" direction = "up" scrollamount = "15"> <h2>CATS CATS CATS CATS CATS
+ </h2></marquee> </big></big></big></big></big></big>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <a href = <%=cat_url(cat)%>>
+    <img src="<%= cat.picture_url %>" /> </a>
+    <br>
+
+    <big><big><big><li><%= link_to cat.name, cat_url(cat) %></li></big></big></big>
+  <% end %>
+</ul>
+
+<%= link_to "Create cat", new_cat_url %>
+<%= link_to "Log In!", new_session_url %>
+
+<%= link_to "Sign up!", new_user_url %>
